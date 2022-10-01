@@ -27,11 +27,19 @@ public class EmailFromService {
         return emailFromRepositoriy.findById(Id);
     }
 
-    public EmailFrom create(EmailFrom emailFrom){
-        return emailFromRepositoriy.save(emailFrom);
+    public String create(EmailFrom emailFrom){
+        emailFromRepositoriy.save(emailFrom);
+        return "E-mail cadastrado com sucesso!";
     }
 
     public EmailFrom getByEmail(String email){
         return emailFromRepositoriy.findByEmail(email);
+    }
+
+    public boolean validaEmail(String email){
+        boolean valor = false;
+        if(email.contains("@gmail.com"))
+            valor = true;
+        return valor;
     }
 }

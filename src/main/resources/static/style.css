@@ -13,7 +13,7 @@
                 width: 100%;
                 height: 100px;
                 text-align: center;
-                margin: 3% 0;
+                margin: 1% 0;
                 font-size: 2em;
                 color: rgb(71, 24, 24);
                 text-decoration: underline dashed;
@@ -88,6 +88,21 @@
                 position: relative;
                 display: block;
             }
+
+            .mensagem {
+                color: red;
+                font-size: 25px;
+                width: 100%;
+                height: 100px;
+                text-align: center;
+            }
+            .mensagemSucesso {
+                            color: blue;
+                            font-size: 25px;
+                            width: 100%;
+                            height: 100px;
+                            text-align: center;
+                        }
 
             button{
                 width: 15%;

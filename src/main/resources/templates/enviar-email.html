@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <title>Envio Email</title>
+    <title>Enviar Email</title>
 </head>
 <body>
 <header>
     <section class="cabecario">
-        <h1>Envio Email</h1>
+        <h1>Envio de Email</h1>
     </section>
 </header>
 <main>
-    <form action="/email/enviar" method="post" class="corpo">
+    <form action="/email/enviarEmail" method="post" th:object="${emailDTO}" class="corpo">
         <div class="row">
             <div class="coluna_1">
                 <label for="emailFrom">E-mail do Remetente:</label>
             </div>
             <div class="coluna_2">
-                <input id="emailFrom" name="emailFrom" type="text" required placeholder="Ex.:jose@gmail.com">
+                <input id="emailFrom" name="emailFrom" type="text" required placeholder="Insira um e-mail já cadastrado">
+                <span class="mensagem" th:if="${#fields.hasErrors('emailFrom')}" th:errors="*{emailFrom}"></span>
+                <span class="mensagem" th:if="${emailMensagem}" th:text="${emailMensagem}"></span>
             </div>
         </div>
         <div class="row">
@@ -29,6 +32,7 @@
             </div>
             <div class="coluna_2">
                 <input id="pessoaEmail" name="emailTo" type="email" required placeholder="Ex.:paulo@gmail.com">
+                <span class="mensagem" th:if="${#fields.hasErrors('emailTo')}" th:errors="*{emailTo}"></span>
             </div>
         </div>
 
@@ -38,7 +42,12 @@
             </div>
             <div class="coluna_2">
                 <input type="text" name="subject" id="tituloEmail" required placeholder="Assunto">
+                <span class="mensagem" th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}"></span>
+
             </div>
+        </div>
+        <div class="row">
+            <span class="mensagem" th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></span>
         </div>
         <div class="email">
             <Textarea type="text" name="text" id="texto" required placeholder="Escreva o email aqui."></Textarea>

@@ -1,13 +1,15 @@
 package com.projetoemail.projetoemail.dto;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 public class EmailFromDTO {
 
-    @NotBlank
+    @NotEmpty(message = "O e-mail deve ser informado")
+    @Email(message = "Email inválido")
     private String email;
 
-    @NotBlank
+    @NotEmpty(message = "A senha deve ser informada")
     private String senha;
 
     public String getEmail() {
