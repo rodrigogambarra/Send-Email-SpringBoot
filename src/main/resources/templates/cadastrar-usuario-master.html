@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário Master</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0%;
+            }
+
+            body{
+                width: 100%;
+                height: 1200px;
+                background: rgb(255, 227, 248);
+            }
+
+            .cabecario{
+                width: 100%;
+                height: 100px;
+                text-align: center;
+                margin: 3% 0;
+                font-size: 2em;
+                color: rgb(71, 24, 24);
+                text-decoration: underline dashed;
+            }
+
+            form{
+                width: 100%;
+                height: 90%;
+                display: inline;
+                text-align: center;
+
+            }
+            label{
+                font-size: 20px;
+                font-weight: bold;
+                color: rgb(71, 24, 24);
+            }
+            .row {
+                width: 100%;
+                display: flex;
+                align-content: space-around;
+                justify-content: center;
+                margin: auto;
+            }
+            .coluna_1{
+                width: 20%;
+                position: relative;
+                align-self: center;
+                text-align: right;
+                left: 2.5%;
+            }
+            .coluna_2{
+                width: 50%;
+                position: relative;
+                text-align: center;
+                right: 2.5%;
+            }
+            input{
+                width: 70%;
+                height: 60%;
+                font-size: 17px;
+                color: rgb(71, 24, 24);
+                font-weight: bold;
+                border-radius: 10px;
+                border: 4px dotted rgb(71, 24, 24);
+                background: rgb(255, 227, 248);
+                margin: 2%;
+                padding: 0 2%;
+
+            }
+            input::placeholder{
+                font-size: 17px;
+                color: rgb(71, 24, 24);
+                font-weight: bold;
+            }
+            textarea{
+                width: 700px;
+                height: 300px;
+                font-size: 17px;
+                color: rgb(71, 24, 24);
+                font-weight: bold;
+                border-radius: 10px;
+                border: 4px dotted rgb(71, 24, 24);
+                background: rgb(255, 227, 248);
+                padding: 2%;
+            }
+            .email{
+                width: 100%;
+            }
+            .textoEmail{
+                font-size: 25px;
+                margin: 2% 0;
+                position: relative;
+                display: block;
+            }
+
+            button{
+                width: 15%;
+                height: 30px;
+                border: 2px solid rgb(71, 24, 24);
+                background-color: rgb(255, 227, 248);
+                color: rgb(71, 24, 24);
+                font-size: 15px;
+                font-weight: bold;
+                margin: 2% 0;
+                border-radius: 10px;
+                align-items: center;
+            }
+            button:hover{
+                border: 2px solid rgb(255, 227, 248);
+                background-color: rgb(71, 24, 24);
+                color: rgb(255, 227, 248);
+                transition: 0.5s;
+            }
+            footer{
+                width: 100%;
+                height: 5%;
+                padding-bottom: 0%;
+
+            }
+            .referencia {
+                padding: 20% 0 0;
+                font-size: 15px;
+                color: rgb(71, 24, 24);
+                font-weight: bold;
+                text-decoration: underline;
+                text-align: center;
+                position: relative;
+            }
+        </style>
+</head>
+<body>
+<header>
+    <section class="cabecario">
+        <h1>Envio Email</h1>
+    </section>
+</header>
+<main>
+<br>
+        <form action="/email/CadastrarUsuario" method="post" class="corpo">
+            <div align="center">
+                <h5>Login</h5>
+            </div>
+
+            <div class="row">
+                <div class="coluna_1">
+                            <label for="email">Email</label>
+                </div>
+                <div class="coluna_2">
+                            <input type="text" name="email" id="email" placeholder="E-mail" required="true" autofocus="true"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="coluna_1">
+                            <label for="password">Senha</label>
+                </div>
+                <div class="coluna_2">
+                            <input type="password" name="senha" id="password" placeholder="Senha" required="true"/>
+                </div>
+            </div>
+            <div class="button">
+                  <button type="submit" class="enviar">
+                         Enviar email
+                 </button>
+            </div>
+        </form>
+</main>
+<footer>
+        <p class="referencia">Criado por Rodrigo Gambarra</p>
+</footer>
+</body>
+</html>
