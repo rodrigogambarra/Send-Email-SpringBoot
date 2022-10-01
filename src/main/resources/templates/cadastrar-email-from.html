@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title>Cadastrar e-mail From</title>
+</head>
+<body>
+<header>
+    <section class="cabecario">
+        <h1>Cadastrar e-mail From</h1>
+    </section>
+</header>
+<main>
+<br>
+        <form action="/email/CadastrarEmailFrom" method="post" class="corpo">
+            <div align="center">
+                <h5>Login</h5>
+            </div>
+            <div class="row">
+                <div class="coluna_1">
+                    <label for="email">Email</label>
+                </div>
+                <div class="coluna_2">
+                    <input type="text" name="email" id="email" required placeholder="E-mail"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="coluna_1">
+                    <label for="password">Senha</label>
+                </div>
+                <div class="coluna_2">
+                            <input type="password" name="senha" id="password" required placeholder="Senha"/>
+                </div>
+            </div>
+            <div class="button">
+                  <button type="submit" class="enviar">
+                         Enviar email
+                 </button>
+            </div>
+        </form>
+</main>
+<footer>
+        <p class="referencia">Criado por Rodrigo Gambarra</p>
+</footer>
+</body>
+</html>

@@ -4,11 +4,7 @@ import com.projetoemail.projetoemail.model.Email;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface EmailRepositoriy extends CrudRepository<Email, Long> {
-
-    Optional<Email> findById(Long id);
-
+public interface EmailRepository extends CrudRepository<Email, Long> {
     List<Email> findAll();
 }
