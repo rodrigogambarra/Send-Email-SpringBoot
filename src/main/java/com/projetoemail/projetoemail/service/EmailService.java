@@ -1,6 +1,5 @@
 package com.projetoemail.projetoemail.service;
 
-import com.projetoemail.projetoemail.dto.EmailDTO;
 import com.projetoemail.projetoemail.model.Email;
 import com.projetoemail.projetoemail.model.EmailFrom;
 import com.projetoemail.projetoemail.repository.EmailRepository;
