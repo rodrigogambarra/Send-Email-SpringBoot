@@ -18,3 +18,6 @@ http://localhost:8080/email/emailsEnviados
 ### 2. Listar todos e-mails froms cadastrados:
 
 http://localhost:8080/email/emailsFrom
+
+![tela de preenchimento do e-mail](https://user-images.githubusercontent.com/47284142/193813103-5a8ebc36-5d32-456d-886b-e94dfc2775e7.png)
+![tela de sucesso no envio](https://user-images.githubusercontent.com/47284142/193813202-c3e5d07a-a842-4936-8d48-9947d3547a8d.png)
