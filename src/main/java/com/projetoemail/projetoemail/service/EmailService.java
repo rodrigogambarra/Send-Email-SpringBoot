@@ -5,6 +5,7 @@ import com.projetoemail.projetoemail.model.EmailFrom;
 import com.projetoemail.projetoemail.repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,8 @@ public class EmailService {
         String msn ="";
         try {
             JavaMailSender javaMailSender = emailSenderService.getJavaMailSender(emailFrom);
+            //FORMATO HTML
+            /*
             MimeMessage mensagem = javaMailSender.createMimeMessage();
             MimeMessageHelper helper;
             helper = new MimeMessageHelper(mensagem, true);
@@ -47,16 +50,21 @@ public class EmailService {
             helper.setTo(email.getEmailTo());
             helper.setText(email.getText(),true);
             javaMailSender.send(mensagem);
-            /*
+            */
+            //FORMATO TEXTO COMUM
+
             SimpleMailMessage mensagem = new SimpleMailMessage();
             mensagem.setFrom(email.getEmailFrom());
             mensagem.setTo(email.getEmailTo());
             mensagem.setSubject(email.getSubject());
             mensagem.setText(email.getText());
-            emailSenderService.getJavaMailSender(emailFrom).send(mensagem);
-            */
+            javaMailSender.send(mensagem);
+
             msn = "Enviado com sucesso";
-        } catch (MailException | MessagingException e){
+            //}catch (MessagingException f){
+            //    msn = "Erro no envio: "+ f.getMessage();
+            //}
+        }catch (MailException e){
             msn = "Erro no envio: "+ e.getMessage();
         } finally {
             System.out.println(msn);
